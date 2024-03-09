@@ -1,3 +1,4 @@
+import 'package:amazing_shopping/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:amazing_shopping/config/router/app_router.dart';
 
@@ -13,6 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
+      theme: AppTheme(selectedColor: 0, isDarkMode: false).getTheme(),
     );
   }
 }
