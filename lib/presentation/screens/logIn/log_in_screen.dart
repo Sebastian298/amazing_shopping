@@ -6,8 +6,9 @@ class LogInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Log In Screen'),
+    return Image.asset(
+      'assets/images/log_in_img.png',
+      fit: BoxFit.cover,
     );
   }
 }
