@@ -37,6 +37,12 @@ final routerProvider = Provider<GoRouter>((ref) {
         },
       )
     ],
-    redirect: (context, state) {},
+    redirect: (context, state) {
+      if (state.fullPath == '/${LogInScreen.name}') {
+        return authState != null ? null : '/${LogInScreen.name}';
+      }
+
+      return authState != null ? null : '/${SplashScreen.name}';
+    },
   );
 });
