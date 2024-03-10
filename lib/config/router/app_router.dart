@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:amazing_shopping/presentation/providers/providers.dart';
+
 import 'package:amazing_shopping/presentation/screens/screens.dart';
+
+import '../../presentation/providers/auth/authentication_provider.dart';
 
 final key = GlobalKey<NavigatorState>();
 
@@ -20,8 +22,8 @@ final routerProvider = Provider<GoRouter>((ref) {
         },
       ),
       GoRoute(
-        path: '/${LogInScreen.routeName}',
-        name: LogInScreen.routeName,
+        path: '/${LogInScreen.name}',
+        name: LogInScreen.name,
         builder: (context, state) {
           return const LogInScreen();
         },
@@ -29,14 +31,15 @@ final routerProvider = Provider<GoRouter>((ref) {
     ],
     redirect: (context, state) {
       final isAuthenticated = authState;
-      if (state.fullPath == '/${LogInScreen.routeName}' &&
-          isAuthenticated != null) {
+
+      if (state.fullPath == '/${LogInScreen.name}' && isAuthenticated != null) {
         return '/';
       }
-      if (state.fullPath != '/${LogInScreen.routeName}' &&
-          isAuthenticated == null) {
-        return '/${LogInScreen.routeName}';
+
+      if (state.fullPath != '/${LogInScreen.name}' && isAuthenticated == null) {
+        return '/${LogInScreen.name}';
       }
+
       return null;
     },
   );

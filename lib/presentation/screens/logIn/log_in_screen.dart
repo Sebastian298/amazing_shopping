@@ -1,12 +1,15 @@
+//import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sign_in_button/sign_in_button.dart';
+import '../../providers/providers.dart';
 
-class LogInScreen extends StatelessWidget {
-  static const String routeName = 'logInScreen';
+class LogInScreen extends ConsumerWidget {
+  static const String name = 'logInScreen';
   const LogInScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final currentYear = DateTime.now().year;
     return Scaffold(
       body: Column(
@@ -26,7 +29,7 @@ class LogInScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                const _SignInButton(),
+                _SignInButton(ref: ref),
               ],
             ),
           ),
@@ -44,14 +47,17 @@ class LogInScreen extends StatelessWidget {
 }
 
 class _SignInButton extends StatelessWidget {
-  const _SignInButton();
+  final WidgetRef ref;
+  const _SignInButton({required this.ref});
 
   @override
   Widget build(BuildContext context) {
     return SignInButton(
       Buttons.google,
       text: 'Sign in with Google',
-      onPressed: () {},
+      onPressed: () async {
+        await ref.read(authenticationNotifierProvider.notifier).logInUser();
+      },
     );
   }
 }

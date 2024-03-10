@@ -2,8 +2,8 @@ import 'package:amazing_shopping/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:amazing_shopping/presentation/providers/providers.dart';
 import 'package:amazing_shopping/config/theme/app_theme.dart';
+import 'config/router/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +26,7 @@ class MainApp extends ConsumerWidget {
       routerDelegate: router.routerDelegate,
       routeInformationProvider: router.routeInformationProvider,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 0, isDarkMode: true).getTheme(),
+      theme: AppTheme(selectedColor: 0, isDarkMode: false).getTheme(),
     );
   }
 }
