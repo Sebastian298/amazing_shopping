@@ -1,4 +1,3 @@
-//import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sign_in_button/sign_in_button.dart';
@@ -45,6 +44,8 @@ class LogInScreen extends ConsumerWidget {
     );
   }
 }
+
+typedef OnSignIn = Future<void> Function();
 
 class _SignInButton extends StatelessWidget {
   final WidgetRef ref;
