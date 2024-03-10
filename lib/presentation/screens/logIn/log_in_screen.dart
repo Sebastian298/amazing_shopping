@@ -18,7 +18,7 @@ class LogInScreen extends ConsumerWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/log_in_img.png', fit: BoxFit.cover),
+                const _ImageLogIn(),
                 const SizedBox(height: 20),
                 const Text(
                   'Welcome to the Amazing Shopping App!',
@@ -41,6 +41,19 @@ class LogInScreen extends ConsumerWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _ImageLogIn extends StatelessWidget {
+  const _ImageLogIn();
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeInImage.assetNetwork(
+      placeholder: 'assets/images/loading.gif',
+      image: 'https://i.ibb.co/12MT5rL/log-in-img.png',
+      fit: BoxFit.cover,
     );
   }
 }
