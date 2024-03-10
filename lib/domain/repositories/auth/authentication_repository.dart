@@ -1,6 +1,6 @@
-import 'package:amazing_shopping/domain/entities/auth/user_info.dart';
+import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
 
 abstract class AuthenticationRepository {
-  Future<UserInfo> logIn();
+  Future<UserResponse> logIn();
   Future<void> logOut();
 }

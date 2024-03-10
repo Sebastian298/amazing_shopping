@@ -1,10 +1,10 @@
-class UserInfo {
+class UserResponse {
   final String id;
   final String? email;
   final String? name;
   final String? photoUrl;
 
-  UserInfo({
+  UserResponse({
     required this.id,
     required this.email,
     required this.name,
