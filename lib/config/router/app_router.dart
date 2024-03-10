@@ -1,7 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:flutter/material.dart';
+import 'package:amazing_shopping/presentation/providers/providers.dart';
 import 'package:amazing_shopping/presentation/screens/screens.dart';
 
 import '../../presentation/providers/auth/authentication_provider.dart';
@@ -36,18 +37,6 @@ final routerProvider = Provider<GoRouter>((ref) {
         },
       )
     ],
-    redirect: (context, state) {
-      final isAuthenticated = authState;
-
-      /// [state.fullPath] will give current  route Path
-
-      if (state.fullPath == '/${LogInScreen.name}') {
-        return isAuthenticated != null ? null : '/${LogInScreen.name}';
-      }
-
-      /// null redirects to Initial Location
-
-      return isAuthenticated != null ? null : '/${SplashScreen.name}';
-    },
+    redirect: (context, state) {},
   );
 });

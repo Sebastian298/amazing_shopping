@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:amazing_shopping/config/theme/app_theme.dart';
 import 'config/router/app_router.dart';
+import 'package:amazing_shopping/presentation/providers/providers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

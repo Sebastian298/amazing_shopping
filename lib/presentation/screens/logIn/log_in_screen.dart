@@ -4,7 +4,7 @@ import 'package:sign_in_button/sign_in_button.dart';
 import '../../providers/providers.dart';
 
 class LogInScreen extends ConsumerWidget {
-  static const String name = 'logInScreen';
+  static const String name = '/logInScreen';
   const LogInScreen({super.key});
 
   @override
