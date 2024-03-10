@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1095720990524",
+    "project_id": "amazing-shop-app",
+    "storage_bucket": "amazing-shop-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095720990524:android:b49382be3ca195759d1039",
+        "android_client_info": {
+          "package_name": "com.example.amazing_shopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095720990524-jq0bm3vmldlm5ss86n88mgl4n1j3fkko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvgiKdjqPDDqzRff5v1oWsTO8Wo0UmUPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095720990524-jq0bm3vmldlm5ss86n88mgl4n1j3fkko.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1095720990524-vof6mgii4gcd7fj94fm4d0pnkgk6mqbu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.amazingShopping"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
