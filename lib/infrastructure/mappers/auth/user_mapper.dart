@@ -2,7 +2,8 @@ import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserMapper {
-  static UserResponse castToEntity(User user) {
+  static UserResponse? castToEntity(User? user) {
+    if (user == null) return null;
     return UserResponse(
       id: user.uid,
       email: user.email,

@@ -7,7 +7,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
 
   AuthenticationRepositoryImpl({required this.authenticationDataSource});
   @override
-  Future<UserResponse> logIn() {
+  Future<UserResponse?> logIn() {
     return authenticationDataSource.logIn();
   }
 

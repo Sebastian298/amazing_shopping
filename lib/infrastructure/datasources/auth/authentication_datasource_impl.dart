@@ -6,10 +6,10 @@ import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
 class AuthenticationDatasourceImpl extends AuthenticationDataSource {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
-  Future<UserResponse> logIn() async {
+  Future<UserResponse?> logIn() async {
     final googleAuthProvider = GoogleAuthProvider();
     final userCredential = await _auth.signInWithProvider(googleAuthProvider);
-    return UserMapper.castToEntity(userCredential.user!);
+    return UserMapper.castToEntity(userCredential.user);
   }
 
   @override
