@@ -26,7 +26,7 @@ class MainApp extends ConsumerWidget {
       routerDelegate: router.routerDelegate,
       routeInformationProvider: router.routeInformationProvider,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 0, isDarkMode: false).getTheme(),
+      theme: AppTheme(selectedColor: 0).getTheme(),
     );
   }
 }
