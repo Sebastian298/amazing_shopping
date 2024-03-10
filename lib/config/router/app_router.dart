@@ -15,14 +15,14 @@ final routerProvider = Provider<GoRouter>((ref) {
     initialLocation: '/',
     routes: [
       GoRoute(
-        path: '/',
+        path: '/${SplashScreen.name}',
         name: SplashScreen.name,
         builder: (context, state) {
           return const SplashScreen();
         },
       ),
       GoRoute(
-        path: '/${HomeScreen.name}',
+        path: '/',
         name: HomeScreen.name,
         builder: (context, state) {
           return const HomeScreen();
@@ -39,13 +39,15 @@ final routerProvider = Provider<GoRouter>((ref) {
     redirect: (context, state) {
       final isAuthenticated = authState;
 
-      if (state.fullPath == '/${HomeScreen.name}' && isAuthenticated == null) {
-        // Redirige a la pantalla de inicio de sesión si el usuario no está autenticado
-        return '/${LogInScreen.name}';
+      /// [state.fullPath] will give current  route Path
+
+      if (state.fullPath == '/${LogInScreen.name}') {
+        return isAuthenticated != null ? null : '/${LogInScreen.name}';
       }
 
-      // De lo contrario, permite el acceso a la ruta solicitada
-      return null;
+      /// null redirects to Initial Location
+
+      return isAuthenticated != null ? null : '/${SplashScreen.name}';
     },
   );
 });
