@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 
 class LogInScreen extends StatelessWidget {
   static const String routeName = '/logInScreen';
@@ -25,10 +26,7 @@ class LogInScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Iniciar sesión'),
-                ),
+                const _SignInButton(),
               ],
             ),
           ),
@@ -41,6 +39,19 @@ class LogInScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _SignInButton extends StatelessWidget {
+  const _SignInButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return SignInButton(
+      Buttons.google,
+      text: 'Sign in with Google',
+      onPressed: () {},
     );
   }
 }
