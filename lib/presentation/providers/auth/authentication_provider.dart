@@ -21,7 +21,8 @@ class AuthenticationNotifier extends StateNotifier<UserResponse?> {
       : super(null);
 
   Future<void> logInUser() async {
-    state = await logIn();
+    final user = await logIn();
+    state = user;
   }
 
   Future<void> logOutUser() async {

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sign_in_button/sign_in_button.dart';
+import '../../providers/providers.dart';
 
-class LogInScreen extends StatelessWidget {
-  static const String routeName = '/logInScreen';
+class LogInScreen extends ConsumerWidget {
+  static const String name = '/logInScreen';
   const LogInScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final currentYear = DateTime.now().year;
     return Scaffold(
       body: Column(
@@ -16,7 +18,7 @@ class LogInScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/log_in_img.png', fit: BoxFit.cover),
+                const _ImageLogIn(),
                 const SizedBox(height: 20),
                 const Text(
                   'Welcome to the Amazing Shopping App!',
@@ -26,7 +28,7 @@ class LogInScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                const _SignInButton(),
+                _SignInButton(ref: ref),
               ],
             ),
           ),
@@ -43,15 +45,33 @@ class LogInScreen extends StatelessWidget {
   }
 }
 
+class _ImageLogIn extends StatelessWidget {
+  const _ImageLogIn();
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeInImage.assetNetwork(
+      placeholder: 'assets/images/loading.gif',
+      image: 'https://i.ibb.co/12MT5rL/log-in-img.png',
+      fit: BoxFit.cover,
+    );
+  }
+}
+
+typedef OnSignIn = Future<void> Function();
+
 class _SignInButton extends StatelessWidget {
-  const _SignInButton();
+  final WidgetRef ref;
+  const _SignInButton({required this.ref});
 
   @override
   Widget build(BuildContext context) {
     return SignInButton(
       Buttons.google,
       text: 'Sign in with Google',
-      onPressed: () {},
+      onPressed: () async {
+        await ref.read(authenticationNotifierProvider.notifier).logInUser();
+      },
     );
   }
 }
