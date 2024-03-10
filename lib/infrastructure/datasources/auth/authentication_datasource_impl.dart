@@ -1,9 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
-import 'package:amazing_shopping/domain/repositories/auth/authentication_repository.dart';
 import 'package:amazing_shopping/infrastructure/mappers/auth/user_mapper.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:amazing_shopping/domain/datasources/auth/authentication_datasource.dart';
+import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
 
-class AuthenticationRepositoryImpl extends AuthenticationRepository {
+class AuthenticationDatasourceImpl extends AuthenticationDataSource {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Future<UserResponse> logIn() async {
@@ -13,7 +13,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
   }
 
   @override
-  Future<void> logOut() async {
-    return await _auth.signOut();
+  Future<void> logOut() {
+    return _auth.signOut();
   }
 }
