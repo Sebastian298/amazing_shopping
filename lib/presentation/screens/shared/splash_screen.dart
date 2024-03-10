@@ -17,19 +17,19 @@ class SlideInfo {
 
 final slices = <SlideInfo>[
   const SlideInfo(
-    'Busca la comida',
+    'lorem10 ipsum dolor sit amet',
     'Ut officia velit nisi sint non cupidatat non.',
-    'assets/images/1.png',
+    'assets/images/1.jpg',
   ),
   const SlideInfo(
-    'Entrega la comida',
+    'lorem10 ipsum dolor sit amet',
     'Et reprehenderit ipsum excepteur ea nisi consequat est labore.',
-    'assets/images/2.png',
+    'assets/images/2.jpg',
   ),
   const SlideInfo(
     'Disfruta la comida',
     'Laborum amet elit occaecat proident in eiusmod elit do aliqua id Lorem nostrud aliqua labore.',
-    'assets/images/3.png',
+    'assets/images/3.jpg',
   ),
 ];
 
