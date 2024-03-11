@@ -26,7 +26,9 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/',
         name: HomeScreen.name,
         builder: (context, state) {
-          return const HomeScreen();
+          return HomeScreen(
+            user: authState,
+          );
         },
       ),
       GoRoute(
@@ -38,11 +40,12 @@ final routerProvider = Provider<GoRouter>((ref) {
       )
     ],
     redirect: (context, state) {
+      final test = authState;
       if (state.fullPath == '/${LogInScreen.name}') {
-        return authState != null ? null : '/${LogInScreen.name}';
+        return test != null ? null : '/${LogInScreen.name}';
       }
 
-      return authState != null ? null : '/${SplashScreen.name}';
+      return test != null ? null : '/${SplashScreen.name}';
     },
   );
 });

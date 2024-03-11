@@ -19,7 +19,7 @@ class AuthenticationDatasourceImpl extends AuthenticationDataSource {
   }
 
   @override
-  Future<void> logOut() {
-    return _auth.signOut();
+  Future<void> logOut() async {
+    return await _auth.signOut();
   }
 }
