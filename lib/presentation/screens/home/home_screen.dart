@@ -28,6 +28,13 @@ class HomeScreen extends StatelessWidget {
           style: titleStyle,
         ),
         actions: [
+          IconButton(
+            icon: Icon(
+              Icons.shopping_cart_outlined,
+              color: colors.primary,
+            ),
+            onPressed: () => {},
+          ),
           _PopUpMenuButtonLogOut(user: user),
         ],
       ),
