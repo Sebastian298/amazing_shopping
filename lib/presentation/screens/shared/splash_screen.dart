@@ -22,12 +22,12 @@ final slices = <SlideInfo>[
     'assets/images/1.jpg',
   ),
   const SlideInfo(
-    'lorem10 ipsum dolor sit amet',
+    'lorem ipsum dolor sit amet',
     'Et reprehenderit ipsum excepteur ea nisi consequat est labore.',
     'assets/images/2.jpg',
   ),
   const SlideInfo(
-    'Disfruta la comida',
+    'lorem ipsum dolor sit amet',
     'Laborum amet elit occaecat proident in eiusmod elit do aliqua id Lorem nostrud aliqua labore.',
     'assets/images/3.jpg',
   ),

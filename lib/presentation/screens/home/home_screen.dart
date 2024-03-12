@@ -1,4 +1,5 @@
 import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
+import 'package:amazing_shopping/presentation/screens/shared/custom_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -28,10 +29,17 @@ class HomeScreen extends StatelessWidget {
           style: titleStyle,
         ),
         actions: [
-          const _ShoppingCart(),
+          IconButton(
+            icon: Icon(
+              Icons.shopping_cart_outlined,
+              color: colors.primary,
+            ),
+            onPressed: () => {},
+          ),
           _PopUpMenuButtonLogOut(user: user),
         ],
       ),
+      bottomNavigationBar: const CustomBottonNavigationBar(),
       body: const Center(
         child: Placeholder(),
       ),
@@ -39,20 +47,16 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class _ShoppingCart extends StatelessWidget {
-  const _ShoppingCart();
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-    return IconButton(
-      icon: Icon(
-        Icons.shopping_cart_outlined,
-        color: colors.primary,
-      ),
-      onPressed: () => {},
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  final colors = Theme.of(context).colorScheme;
+  return IconButton(
+    icon: Icon(
+      Icons.shopping_cart_outlined,
+      color: colors.primary,
+    ),
+    onPressed: () => {},
+  );
 }
 
 class _PopUpMenuButtonLogOut extends ConsumerWidget {
