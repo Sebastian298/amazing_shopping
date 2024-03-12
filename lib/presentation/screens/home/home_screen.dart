@@ -1,4 +1,5 @@
 import 'package:amazing_shopping/domain/entities/auth/user_response.dart';
+import 'package:amazing_shopping/presentation/screens/shared/custom_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -38,6 +39,7 @@ class HomeScreen extends StatelessWidget {
           _PopUpMenuButtonLogOut(user: user),
         ],
       ),
+      bottomNavigationBar: const CustomBottonNavigationBar(),
       body: const Center(
         child: Placeholder(),
       ),
