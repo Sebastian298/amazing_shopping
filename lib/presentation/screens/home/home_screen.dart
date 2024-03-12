@@ -28,7 +28,6 @@ class HomeScreen extends StatelessWidget {
           style: titleStyle,
         ),
         actions: [
-          const _ShoppingCart(),
           _PopUpMenuButtonLogOut(user: user),
         ],
       ),
@@ -39,20 +38,16 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class _ShoppingCart extends StatelessWidget {
-  const _ShoppingCart();
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-    return IconButton(
-      icon: Icon(
-        Icons.shopping_cart_outlined,
-        color: colors.primary,
-      ),
-      onPressed: () => {},
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  final colors = Theme.of(context).colorScheme;
+  return IconButton(
+    icon: Icon(
+      Icons.shopping_cart_outlined,
+      color: colors.primary,
+    ),
+    onPressed: () => {},
+  );
 }
 
 class _PopUpMenuButtonLogOut extends ConsumerWidget {
