@@ -4,6 +4,8 @@ class Product {
   final String description;
   final List<String> images;
   final double price;
+  final DateTime creationAt;
+  final DateTime updatedAt;
   bool isFavorite = false;
 
   Product({
@@ -12,6 +14,7 @@ class Product {
     required this.description,
     required this.images,
     required this.price,
-    required this.isFavorite,
+    required this.creationAt,
+    required this.updatedAt,
   });
 }
