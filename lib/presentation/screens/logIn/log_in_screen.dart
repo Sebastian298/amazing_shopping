@@ -52,7 +52,8 @@ class _ImageLogIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInImage.assetNetwork(
       placeholder: 'assets/images/loading.gif',
-      image: 'https://i.ibb.co/12MT5rL/log-in-img.png',
+      image:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiWUmFWFoCMbxTomoNBLjHK5Tze60uzS4GAA&s',
       fit: BoxFit.cover,
     );
   }

@@ -70,10 +70,7 @@ class _PopUpMenuButtonLogOut extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return PopupMenuButton(
-      icon: Image.network(
-        user?.photoUrl ??
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbZPi8Q25_Wy5OnIrMEji5_Rk63WhS77URXw&usqp=CAU',
-      ),
+      icon: Image.asset('assets/images/user_icon.png'),
       itemBuilder: (context) => [
         PopupMenuItem(
             child: const Text(
